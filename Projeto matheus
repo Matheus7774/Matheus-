@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joguinho - Contador de Cliques</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Contador de Cliques</h1>
+    <p id="score">Pontuação: 0</p>
+    <button id="clickButton">Clique aqui!</button>
+    <button id="resetButton">Resetar</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+let score = 0;
+
+// Elementos HTML
+const scoreElement = document.getElementById("score");
+const clickButton = document.getElementById("clickButton");
+const resetButton = document.getElementById("resetButton");
+
+// Função para incrementar a pontuação
+clickButton.addEventListener("click", () => {
+  score++;
+  scoreElement.textContent = `Pontuação: ${score}`;
+});
+
+// Função para resetar a pontuação
+resetButton.addEventListener("click", () => {
+  score = 0;
+  scoreElement.textContent = `Pontuação: ${score}`;
+});
